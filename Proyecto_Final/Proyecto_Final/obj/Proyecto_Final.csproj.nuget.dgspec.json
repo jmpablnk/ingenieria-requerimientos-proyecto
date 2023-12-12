@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {}
+    "C:\\Users\\pcama\\Source\\Repos\\ingenieria-requerimientos-proyecto\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {
+    "C:\\Users\\pcama\\Source\\Repos\\ingenieria-requerimientos-proyecto\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
+        "projectUniqueName": "C:\\Users\\pcama\\Source\\Repos\\ingenieria-requerimientos-proyecto\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
         "projectName": "Proyecto_Final",
-        "projectPath": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
-        "packagesPath": "C:\\Users\\hora1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\obj\\",
+        "projectPath": "C:\\Users\\pcama\\Source\\Repos\\ingenieria-requerimientos-proyecto\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
+        "packagesPath": "C:\\Users\\pcama\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pcama\\Source\\Repos\\ingenieria-requerimientos-proyecto\\Proyecto_Final\\Proyecto_Final\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hora1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pcama\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

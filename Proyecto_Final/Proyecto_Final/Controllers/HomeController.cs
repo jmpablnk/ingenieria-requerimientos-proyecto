@@ -22,6 +22,10 @@ namespace Proyecto_Final.Controllers
         {
             return View();
         }
+        public IActionResult IniciarSession()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
