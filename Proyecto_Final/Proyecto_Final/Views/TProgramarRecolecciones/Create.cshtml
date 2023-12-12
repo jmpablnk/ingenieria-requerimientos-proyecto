@@ -1,0 +1,64 @@
+﻿@model Proyecto_Final.Models.TProgramarRecoleccion
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TProgramarRecoleccion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DetallesEdificio" class="control-label"></label>
+                <input asp-for="DetallesEdificio" class="form-control" />
+                <span asp-validation-for="DetallesEdificio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoPostal" class="control-label"></label>
+                <input asp-for="CodigoPostal" class="form-control" />
+                <span asp-validation-for="CodigoPostal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Municipio" class="control-label"></label>
+                <input asp-for="Municipio" class="form-control" />
+                <span asp-validation-for="Municipio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Provincia" class="control-label"></label>
+                <select asp-for="Provincia" class ="form-control" asp-items="ViewBag.Provincia"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Canton" class="control-label"></label>
+                <input asp-for="Canton" class="form-control" />
+                <span asp-validation-for="Canton" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <select asp-for="Fecha" class ="form-control" asp-items="ViewBag.Fecha"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hora" class="control-label"></label>
+                <select asp-for="Hora" class ="form-control" asp-items="ViewBag.Hora"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class ="form-control" asp-items="ViewBag.UsuarioId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

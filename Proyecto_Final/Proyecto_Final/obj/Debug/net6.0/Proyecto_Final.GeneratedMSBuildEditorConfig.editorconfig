@@ -1,0 +1,205 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Proyecto_Final
+build_property.RootNamespace = Proyecto_Final
+build_property.ProjectDir = C:\Users\hora1\OneDrive\Escritorio\Universidad\UAM\Ingeneria de requirimiento y calidad\Semana 15\Proyecto_Final\Proyecto_Final\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\hora1\OneDrive\Escritorio\Universidad\UAM\Ingeneria de requirimiento y calidad\Semana 15\Proyecto_Final\Proyecto_Final
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TFechas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEZlY2hhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TFechas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEZlY2hhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TFechas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEZlY2hhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TFechas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEZlY2hhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TFechas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEZlY2hhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/THoras/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEhvcmFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/THoras/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEhvcmFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/THoras/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEhvcmFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/THoras/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEhvcmFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/THoras/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEhvcmFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TMateriales/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE1hdGVyaWFsZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TMateriales/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE1hdGVyaWFsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TMateriales/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE1hdGVyaWFsZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TMateriales/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE1hdGVyaWFsZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TMateriales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE1hdGVyaWFsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TNombreMateriales/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE5vbWJyZU1hdGVyaWFsZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TNombreMateriales/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE5vbWJyZU1hdGVyaWFsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TNombreMateriales/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE5vbWJyZU1hdGVyaWFsZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TNombreMateriales/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE5vbWJyZU1hdGVyaWFsZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TNombreMateriales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE5vbWJyZU1hdGVyaWFsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProgramarRecolecciones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb2dyYW1hclJlY29sZWNjaW9uZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProgramarRecolecciones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb2dyYW1hclJlY29sZWNjaW9uZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProgramarRecolecciones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb2dyYW1hclJlY29sZWNjaW9uZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProgramarRecolecciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb2dyYW1hclJlY29sZWNjaW9uZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProgramarRecolecciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb2dyYW1hclJlY29sZWNjaW9uZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProvincias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb3ZpbmNpYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProvincias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb3ZpbmNpYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProvincias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb3ZpbmNpYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProvincias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb3ZpbmNpYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TProvincias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFByb3ZpbmNpYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TRoles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFJvbGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TRoles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFJvbGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TRoles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFJvbGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TRoles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFJvbGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TRoles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFJvbGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TUsuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFVzdWFyaW9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TUsuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFVzdWFyaW9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TUsuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFVzdWFyaW9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TUsuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFVzdWFyaW9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/TUsuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVFVzdWFyaW9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hora1/OneDrive/Escritorio/Universidad/UAM/Ingeneria de requirimiento y calidad/Semana 15/Proyecto_Final/Proyecto_Final/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-cw1htc5e49

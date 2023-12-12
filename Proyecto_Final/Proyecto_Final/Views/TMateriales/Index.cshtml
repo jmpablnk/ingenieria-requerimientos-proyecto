@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Proyecto_Final.Models.TMateriale>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peticion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreMaterial.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peticion.Municipio)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaterialId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaterialId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaterialId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
