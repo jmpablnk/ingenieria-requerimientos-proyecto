@@ -13,15 +13,6 @@ namespace Proyecto_Final.Controllers
     {
         private readonly DB_RECOLECCION_RECICLAJEContext _context;
 
-        /// <summary>
-        ///
-        /// 
-        /// En este apartado, El administrador Pondra las diversas provincias para que el sistema lo tome en cuenta y los usuarios tenga acceso.
-        /// 
-        /// 
-        /// 
-        /// </summary>
-
         public TProvinciasController(DB_RECOLECCION_RECICLAJEContext context)
         {
             _context = context;
@@ -35,7 +26,7 @@ namespace Proyecto_Final.Controllers
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.TProvincium'  is null.");
         }
 
-        // Detalles
+        // GET: TProvincias/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.TProvincium == null)
@@ -53,31 +44,29 @@ namespace Proyecto_Final.Controllers
             return View(tProvincium);
         }
 
-        //Crear 
+        // GET: TProvincias/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // Crear
+        // POST: TProvincias/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProvinciaId,Provincia")] TProvincium tProvincium)
         {
-            try
+            if (ModelState.IsValid)
             {
                 _context.Add(tProvincium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            catch 
-            {
-                throw;
-            }
             return View(tProvincium);
         }
 
-        // Editar
+        // GET: TProvincias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TProvincium == null)
@@ -93,7 +82,9 @@ namespace Proyecto_Final.Controllers
             return View(tProvincium);
         }
 
-        // Editar
+        // POST: TProvincias/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ProvinciaId,Provincia")] TProvincium tProvincium)
@@ -103,7 +94,8 @@ namespace Proyecto_Final.Controllers
                 return NotFound();
             }
 
-            
+            if (ModelState.IsValid)
+            {
                 try
                 {
                     _context.Update(tProvincium);
@@ -121,11 +113,11 @@ namespace Proyecto_Final.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            
+            }
             return View(tProvincium);
         }
 
-        // Eliminar
+        // GET: TProvincias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TProvincium == null)
@@ -143,7 +135,7 @@ namespace Proyecto_Final.Controllers
             return View(tProvincium);
         }
 
-        // Eliminar 
+        // POST: TProvincias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

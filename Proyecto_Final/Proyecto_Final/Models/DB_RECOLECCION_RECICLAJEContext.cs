@@ -16,14 +16,12 @@ namespace Proyecto_Final.Models
         {
         }
 
-        public virtual DbSet<TFecha> TFecha { get; set; } 
-        public virtual DbSet<THora> THora { get; set; }
+        public virtual DbSet<TFecha> TFecha { get; set; }
+        public virtual DbSet<THora> THora { get; set; } 
         public virtual DbSet<TMateriale> TMateriale { get; set; } 
-        public virtual DbSet<TNombreMaterial> TNombreMaterial { get; set; }
+        public virtual DbSet<TNombreMaterial> TNombreMaterial { get; set; } 
         public virtual DbSet<TProgramarRecoleccion> TProgramarRecoleccion { get; set; } 
         public virtual DbSet<TProvincium> TProvincium { get; set; } 
-        public virtual DbSet<TRole> TRole { get; set; } 
-        public virtual DbSet<TUsuario> TUsuario { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -143,8 +141,6 @@ namespace Proyecto_Final.Models
 
                 entity.Property(e => e.Provincia).HasColumnName("PROVINCIA");
 
-                entity.Property(e => e.UsuarioId).HasColumnName("USUARIO_ID");
-
                 entity.HasOne(d => d.FechaNavigation)
                     .WithMany(p => p.TProgramarRecoleccions)
                     .HasForeignKey(d => d.Fecha)
@@ -162,12 +158,6 @@ namespace Proyecto_Final.Models
                     .HasForeignKey(d => d.Provincia)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_PROGRAMAR_RECOLECCION_PROVINCIA");
-
-                entity.HasOne(d => d.Usuario)
-                    .WithMany(p => p.TProgramarRecoleccions)
-                    .HasForeignKey(d => d.UsuarioId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_PROGRAMAR_RECOLECCION_USUARIO_ID");
             });
 
             modelBuilder.Entity<TProvincium>(entity =>
@@ -183,77 +173,6 @@ namespace Proyecto_Final.Models
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("PROVINCIA");
-            });
-
-            modelBuilder.Entity<TRole>(entity =>
-            {
-                entity.HasKey(e => e.RolId)
-                    .HasName("PK_T_ROLE_USUARIO");
-
-                entity.ToTable("T_ROLES", "SCH_RECIQUEST");
-
-                entity.Property(e => e.RolId).HasColumnName("ROL_ID");
-
-                entity.Property(e => e.Estado)
-                    .IsRequired()
-                    .HasColumnName("ESTADO")
-                    .HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.Nombre)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("NOMBRE");
-
-                entity.Property(e => e.Permiso)
-                    .IsUnicode(false)
-                    .HasColumnName("PERMISO");
-            });
-
-            modelBuilder.Entity<TUsuario>(entity =>
-            {
-                entity.HasKey(e => e.UsuarioId);
-
-                entity.ToTable("T_USUARIOS", "SCH_RECIQUEST");
-
-                entity.Property(e => e.UsuarioId).HasColumnName("USUARIO_ID");
-
-                entity.Property(e => e.Apellido)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("APELLIDO");
-
-                entity.Property(e => e.Contrasena)
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("CONTRASENA");
-
-                entity.Property(e => e.CorreoElectronico)
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("CORREO_ELECTRONICO");
-
-                entity.Property(e => e.Indentificacion)
-                    .HasMaxLength(150)
-                    .IsUnicode(false)
-                    .HasColumnName("INDENTIFICACION");
-
-                entity.Property(e => e.Nombre)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("NOMBRE");
-
-                entity.Property(e => e.NumTelefono)
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .HasColumnName("NUM_TELEFONO");
-
-                entity.Property(e => e.RolId).HasColumnName("ROL_ID");
-
-                entity.HasOne(d => d.Rol)
-                    .WithMany(p => p.TUsuarios)
-                    .HasForeignKey(d => d.RolId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_USUARIOS_ROL_ID");
             });
 
             OnModelCreatingPartial(modelBuilder);

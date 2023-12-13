@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {}
+    "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Proyecto FInal\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {
+    "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Proyecto FInal\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
+        "projectUniqueName": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Proyecto FInal\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
         "projectName": "Proyecto_Final",
-        "projectPath": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
+        "projectPath": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Proyecto FInal\\Proyecto_Final\\Proyecto_Final\\Proyecto_Final.csproj",
         "packagesPath": "C:\\Users\\hora1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Semana 15\\Proyecto_Final\\Proyecto_Final\\obj\\",
+        "outputPath": "C:\\Users\\hora1\\OneDrive\\Escritorio\\Universidad\\UAM\\Ingeneria de requirimiento y calidad\\Proyecto FInal\\Proyecto_Final\\Proyecto_Final\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hora1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,7 +40,15 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[6.0.25, )"
             },

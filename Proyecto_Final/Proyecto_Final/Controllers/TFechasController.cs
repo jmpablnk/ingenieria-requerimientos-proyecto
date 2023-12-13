@@ -13,31 +13,16 @@ namespace Proyecto_Final.Controllers
     {
         private readonly DB_RECOLECCION_RECICLAJEContext _context;
 
-
-        /// <summary>
-        ///
-        /// 
-        /// Este apartado no se toca, ya que esta los 7 dias de la semana almenos que se realiza cambios para el mantenimiento de administrador
-        /// 
-        /// 
-        /// 
-        /// </summary>
-        /// <param name="context"></param>
-
         public TFechasController(DB_RECOLECCION_RECICLAJEContext context)
         {
             _context = context;
         }
-
-
         public async Task<IActionResult> Index()
         {
               return _context.TFecha != null ? 
                           View(await _context.TFecha.ToListAsync()) :
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.TFecha'  is null.");
         }
-
-        //Detalles
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.TFecha == null)
@@ -54,14 +39,10 @@ namespace Proyecto_Final.Controllers
 
             return View(tFecha);
         }
-
-        // Crear
         public IActionResult Create()
         {
             return View();
         }
-
-        // Crear
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FechaId,Fecha")] TFecha tFecha)
@@ -72,14 +53,12 @@ namespace Proyecto_Final.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch 
             {
                 throw;
             }
             return View(tFecha);
         }
-
-        // Editar
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TFecha == null)
@@ -94,8 +73,6 @@ namespace Proyecto_Final.Controllers
             }
             return View(tFecha);
         }
-
-        //Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FechaId,Fecha")] TFecha tFecha)
@@ -105,7 +82,7 @@ namespace Proyecto_Final.Controllers
                 return NotFound();
             }
 
-            
+           
                 try
                 {
                     _context.Update(tFecha);
@@ -121,13 +98,11 @@ namespace Proyecto_Final.Controllers
                     {
                         throw;
                     }
-                }
+                
                 return RedirectToAction(nameof(Index));
-            
+            }
             return View(tFecha);
         }
-
-        //Eliminar
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TFecha == null)
@@ -144,9 +119,6 @@ namespace Proyecto_Final.Controllers
 
             return View(tFecha);
         }
-
-        // Eliminar
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

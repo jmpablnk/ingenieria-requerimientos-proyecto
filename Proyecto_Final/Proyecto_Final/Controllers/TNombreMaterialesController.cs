@@ -17,8 +17,6 @@ namespace Proyecto_Final.Controllers
         {
             _context = context;
         }
-
-        //Tabla TNombreMateriales
         public async Task<IActionResult> Index()
         {
               return _context.TNombreMaterial != null ? 
@@ -26,7 +24,6 @@ namespace Proyecto_Final.Controllers
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.TNombreMaterial'  is null.");
         }
 
-        //Detalles
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.TNombreMaterial == null)
@@ -44,33 +41,25 @@ namespace Proyecto_Final.Controllers
             return View(tNombreMaterial);
         }
 
-
-
-        // Crear
         public IActionResult Create()
         {
             return View();
         }
-
-        // Crear
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("NombreMaterialId,Nombre")] TNombreMaterial tNombreMaterial)
         {
-            try { 
+            try
+            {
                 _context.Add(tNombreMaterial);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex) 
-            {
-                
-            }
+            catch
+            { }
             return View(tNombreMaterial);
         }
 
-        // Editar
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TNombreMaterial == null)
@@ -85,8 +74,6 @@ namespace Proyecto_Final.Controllers
             }
             return View(tNombreMaterial);
         }
-
-        // Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("NombreMaterialId,Nombre")] TNombreMaterial tNombreMaterial)
@@ -95,8 +82,6 @@ namespace Proyecto_Final.Controllers
             {
                 return NotFound();
             }
-
-            
                 try
                 {
                     _context.Update(tNombreMaterial);
@@ -112,13 +97,11 @@ namespace Proyecto_Final.Controllers
                     {
                         throw;
                     }
-                }
+                
                 return RedirectToAction(nameof(Index));
-            
+            }
             return View(tNombreMaterial);
         }
-
-        // Eliminar
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TNombreMaterial == null)
@@ -135,8 +118,6 @@ namespace Proyecto_Final.Controllers
 
             return View(tNombreMaterial);
         }
-
-        // Eliminar
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

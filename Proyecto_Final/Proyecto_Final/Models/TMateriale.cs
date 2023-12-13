@@ -8,7 +8,6 @@ namespace Proyecto_Final.Models
     {
         public int MaterialId { get; set; }
         public int NombreMaterialId { get; set; }
-
         [Required(ErrorMessage = "El campo Peso es obligatorio.")]
         [RegularExpression(@"^\d+(\.\d+)?$", ErrorMessage = "Por favor, ingrese un valor válido para el peso en kilogramos.")]
         public string Peso { get; set; } = null!;

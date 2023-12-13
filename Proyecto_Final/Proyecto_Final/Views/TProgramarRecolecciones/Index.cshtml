@@ -33,12 +33,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProvinciaNavigation)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -58,20 +52,14 @@
                 @Html.DisplayFor(modelItem => item.Canton)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaNavigation.Fecha)
+                @Html.DisplayFor(modelItem => item.FechaNavigation.FechaId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HoraNavigation.Hora)
+                @Html.DisplayFor(modelItem => item.HoraNavigation.HoraId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProvinciaNavigation.Provincia)
+                @Html.DisplayFor(modelItem => item.ProvinciaNavigation.ProvinciaId)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Nombre)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Usuario.Apellido)
-                </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PeticionId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.PeticionId">Details</a> |

@@ -13,16 +13,6 @@ namespace Proyecto_Final.Controllers
     {
         private readonly DB_RECOLECCION_RECICLAJEContext _context;
 
-
-        /// <summary>
-        ///
-        /// 
-        /// En este apartado, El administrador Pondra las diversas horas para que el sistema lo tome en cuenta y los usuarios tenga acceso.
-        /// 
-        /// 
-        /// 
-        /// </summary>
-
         public THorasController(DB_RECOLECCION_RECICLAJEContext context)
         {
             _context = context;
@@ -36,7 +26,7 @@ namespace Proyecto_Final.Controllers
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.THora'  is null.");
         }
 
-        // Detalles
+        // GET: THoras/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.THora == null)
@@ -54,18 +44,19 @@ namespace Proyecto_Final.Controllers
             return View(tHora);
         }
 
-        // Crear 
+        // GET: THoras/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // Crear
+        // POST: THoras/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("HoraId,Hora")] THora tHora)
         {
-
             try
             {
                 _context.Add(tHora);
@@ -78,8 +69,6 @@ namespace Proyecto_Final.Controllers
             }
             return View(tHora);
         }
-
-        // Editar
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.THora == null)
@@ -94,8 +83,6 @@ namespace Proyecto_Final.Controllers
             }
             return View(tHora);
         }
-
-        // Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("HoraId,Hora")] THora tHora)
@@ -105,7 +92,7 @@ namespace Proyecto_Final.Controllers
                 return NotFound();
             }
 
-            
+           
                 try
                 {
                     _context.Update(tHora);
@@ -127,7 +114,7 @@ namespace Proyecto_Final.Controllers
             return View(tHora);
         }
 
-        // Eliminar
+        // GET: THoras/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.THora == null)
@@ -145,7 +132,7 @@ namespace Proyecto_Final.Controllers
             return View(tHora);
         }
 
-        // Eliminar
+        // POST: THoras/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

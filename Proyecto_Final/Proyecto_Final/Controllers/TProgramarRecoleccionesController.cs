@@ -18,14 +18,14 @@ namespace Proyecto_Final.Controllers
             _context = context;
         }
 
-        // TProgramarRecolecciones
+        // GET: TProgramarRecolecciones
         public async Task<IActionResult> Index()
         {
-            var dB_RECOLECCION_RECICLAJEContext = _context.TProgramarRecoleccion.Include(t => t.FechaNavigation).Include(t => t.HoraNavigation).Include(t => t.ProvinciaNavigation).Include(t => t.Usuario);
+            var dB_RECOLECCION_RECICLAJEContext = _context.TProgramarRecoleccion.Include(t => t.FechaNavigation).Include(t => t.HoraNavigation).Include(t => t.ProvinciaNavigation);
             return View(await dB_RECOLECCION_RECICLAJEContext.ToListAsync());
         }
 
-        // Detalles
+        // GET: TProgramarRecolecciones/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.TProgramarRecoleccion == null)
@@ -37,7 +37,6 @@ namespace Proyecto_Final.Controllers
                 .Include(t => t.FechaNavigation)
                 .Include(t => t.HoraNavigation)
                 .Include(t => t.ProvinciaNavigation)
-                .Include(t => t.Usuario)
                 .FirstOrDefaultAsync(m => m.PeticionId == id);
             if (tProgramarRecoleccion == null)
             {
@@ -47,51 +46,35 @@ namespace Proyecto_Final.Controllers
             return View(tProgramarRecoleccion);
         }
 
-
-
-        // Crear 
+        // GET: TProgramarRecolecciones/Create
         public IActionResult Create()
         {
-            var usuarios = _context.TUsuario.ToList(); // Obtén todos los usuarios
-
-            // Construir la lista de SelectListItem con nombre y apellido concatenados
-            var usuariosList = usuarios.Select(u => new SelectListItem
-            {
-                Value = u.UsuarioId.ToString(),
-                Text = $"{u.Nombre} {u.Apellido}"  // Concatenar nombre y apellido
-            }).ToList();
-
-            ViewData["UsuarioId"] = new SelectList(usuariosList, "Value", "Text");
-            ViewData["Fecha"] = new SelectList(_context.TFecha, "FechaId", "Fecha");
-            ViewData["Hora"] = new SelectList(_context.THora, "HoraId", "Hora");
-            ViewData["Provincia"] = new SelectList(_context.TProvincium, "ProvinciaId", "Provincia");
+            ViewData["Fecha"] = new SelectList(_context.TFecha, "FechaId", "FechaId");
+            ViewData["Hora"] = new SelectList(_context.THora, "HoraId", "HoraId");
+            ViewData["Provincia"] = new SelectList(_context.TProvincium, "ProvinciaId", "ProvinciaId");
             return View();
         }
 
-        // Crear
+        // POST: TProgramarRecolecciones/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PeticionId,DetallesEdificio,CodigoPostal,Municipio,Provincia,Canton,Fecha,Hora,UsuarioId")] TProgramarRecoleccion tProgramarRecoleccion)
+        public async Task<IActionResult> Create([Bind("PeticionId,DetallesEdificio,CodigoPostal,Municipio,Provincia,Canton,Fecha,Hora")] TProgramarRecoleccion tProgramarRecoleccion)
         {
-          
-                try
-                {
-                    _context.Add(tProgramarRecoleccion);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("Create", "TMateriales");
-                }
-                catch
-                {
-                    throw;
-                }
+            if (ModelState.IsValid)
+            {
+                _context.Add(tProgramarRecoleccion);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
             ViewData["Fecha"] = new SelectList(_context.TFecha, "FechaId", "FechaId", tProgramarRecoleccion.Fecha);
             ViewData["Hora"] = new SelectList(_context.THora, "HoraId", "HoraId", tProgramarRecoleccion.Hora);
             ViewData["Provincia"] = new SelectList(_context.TProvincium, "ProvinciaId", "ProvinciaId", tProgramarRecoleccion.Provincia);
-            ViewData["UsuarioId"] = new SelectList(_context.TUsuario, "UsuarioId", "Apellido", tProgramarRecoleccion.UsuarioId);
             return View(tProgramarRecoleccion);
         }
 
-        // Editar
+        // GET: TProgramarRecolecciones/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TProgramarRecoleccion == null)
@@ -104,33 +87,26 @@ namespace Proyecto_Final.Controllers
             {
                 return NotFound();
             }
-            var usuarios = _context.TUsuario.ToList(); // Obtén todos los usuarios
-
-            // Construir la lista de SelectListItem con nombre y apellido concatenados
-            var usuariosList = usuarios.Select(u => new SelectListItem
-            {
-                Value = u.UsuarioId.ToString(),
-                Text = $"{u.Nombre} {u.Apellido}"  // Concatenar nombre y apellido
-            }).ToList();
-
-            ViewData["UsuarioId"] = new SelectList(usuariosList, "Value", "Text");
-            ViewData["Fecha"] = new SelectList(_context.TFecha, "FechaId", "Fecha", tProgramarRecoleccion.Fecha);
-            ViewData["Hora"] = new SelectList(_context.THora, "HoraId", "Hora", tProgramarRecoleccion.Hora);
-            ViewData["Provincia"] = new SelectList(_context.TProvincium, "ProvinciaId", "Provincia", tProgramarRecoleccion.Provincia);
+            ViewData["Fecha"] = new SelectList(_context.TFecha, "FechaId", "FechaId", tProgramarRecoleccion.Fecha);
+            ViewData["Hora"] = new SelectList(_context.THora, "HoraId", "HoraId", tProgramarRecoleccion.Hora);
+            ViewData["Provincia"] = new SelectList(_context.TProvincium, "ProvinciaId", "ProvinciaId", tProgramarRecoleccion.Provincia);
             return View(tProgramarRecoleccion);
         }
 
-        // Editar
+        // POST: TProgramarRecolecciones/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PeticionId,DetallesEdificio,CodigoPostal,Municipio,Provincia,Canton,Fecha,Hora,UsuarioId")] TProgramarRecoleccion tProgramarRecoleccion)
+        public async Task<IActionResult> Edit(int id, [Bind("PeticionId,DetallesEdificio,CodigoPostal,Municipio,Provincia,Canton,Fecha,Hora")] TProgramarRecoleccion tProgramarRecoleccion)
         {
             if (id != tProgramarRecoleccion.PeticionId)
             {
                 return NotFound();
             }
 
-            
+            if (ModelState.IsValid)
+            {
                 try
                 {
                     _context.Update(tProgramarRecoleccion);
@@ -148,15 +124,14 @@ namespace Proyecto_Final.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            
+            }
             ViewData["Fecha"] = new SelectList(_context.TFecha, "FechaId", "FechaId", tProgramarRecoleccion.Fecha);
             ViewData["Hora"] = new SelectList(_context.THora, "HoraId", "HoraId", tProgramarRecoleccion.Hora);
             ViewData["Provincia"] = new SelectList(_context.TProvincium, "ProvinciaId", "ProvinciaId", tProgramarRecoleccion.Provincia);
-            ViewData["UsuarioId"] = new SelectList(_context.TUsuario, "UsuarioId", "Apellido", tProgramarRecoleccion.UsuarioId);
             return View(tProgramarRecoleccion);
         }
 
-        // Eliminar
+        // GET: TProgramarRecolecciones/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TProgramarRecoleccion == null)
@@ -168,7 +143,6 @@ namespace Proyecto_Final.Controllers
                 .Include(t => t.FechaNavigation)
                 .Include(t => t.HoraNavigation)
                 .Include(t => t.ProvinciaNavigation)
-                .Include(t => t.Usuario)
                 .FirstOrDefaultAsync(m => m.PeticionId == id);
             if (tProgramarRecoleccion == null)
             {
@@ -178,7 +152,7 @@ namespace Proyecto_Final.Controllers
             return View(tProgramarRecoleccion);
         }
 
-        // Eliminar
+        // POST: TProgramarRecolecciones/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
