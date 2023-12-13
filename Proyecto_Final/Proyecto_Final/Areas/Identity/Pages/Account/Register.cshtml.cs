@@ -103,8 +103,8 @@ namespace Proyecto_Final.Areas.Identity.Pages.Account
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
                     
                     
-                    //Linea parar asignar el rol por defecto de "Usuario" a nuevos creados
-                    await _userManager.AddToRoleAsync(user, "Administrador");
+                    // Aignar el rol por defecto a nuevo usuario" 
+                    await _userManager.AddToRoleAsync(user, "Usuario");
                     //Administrador
                     //Usuario
 

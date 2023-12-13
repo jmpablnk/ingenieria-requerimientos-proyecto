@@ -10,6 +10,7 @@ using Proyecto_Final.Models;
 
 namespace Proyecto_Final.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class TFechasController : Controller
     {
         private readonly DB_RECOLECCION_RECICLAJEContext _context;

@@ -77,6 +77,9 @@ namespace Proyecto_Final.Controllers
             ViewData["PeticionId"] = new SelectList(_context.TProgramarRecoleccion, "PeticionId", "PeticionId", tMateriale.PeticionId);
             return View(tMateriale);
         }
+
+
+        //Editar 
         [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int? id)
 
@@ -90,10 +93,12 @@ namespace Proyecto_Final.Controllers
             {
                 return NotFound();
             }
-            ViewData["NombreMaterialId"] = new SelectList(_context.TNombreMaterial, "NombreMaterialId", "NombreMaterialId", tMateriale.NombreMaterialId);
-            ViewData["PeticionId"] = new SelectList(_context.TProgramarRecoleccion, "PeticionId", "PeticionId", tMateriale.PeticionId);
+            ViewData["NombreMaterialId"] = new SelectList(_context.TNombreMaterial, "NombreMaterialId", "Nombre", tMateriale.NombreMaterialId);
+            ViewData["PeticionId"] = new SelectList(_context.TProgramarRecoleccion, "PeticionId", "Municipio", tMateriale.PeticionId);
             return View(tMateriale);
         }
+
+        //Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrador")]

@@ -21,7 +21,7 @@ namespace Proyecto_Final.Controllers
         
         // Index THORAS
 
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador,Usuario")]
         public async Task<IActionResult> Index()
         {
               return _context.THora != null ? 
@@ -32,7 +32,7 @@ namespace Proyecto_Final.Controllers
         
         //Detalles
         
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador,Usuario")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.THora == null)
