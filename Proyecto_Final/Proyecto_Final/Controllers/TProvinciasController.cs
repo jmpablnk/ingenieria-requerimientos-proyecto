@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,9 @@ namespace Proyecto_Final.Controllers
             _context = context;
         }
 
-        // GET: TProvincias
+        //Index Provincias
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Index()
         {
               return _context.TProvincium != null ? 
@@ -26,7 +29,10 @@ namespace Proyecto_Final.Controllers
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.TProvincium'  is null.");
         }
 
-        // GET: TProvincias/Details/5
+
+        //Detalles 
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.TProvincium == null)
@@ -44,29 +50,38 @@ namespace Proyecto_Final.Controllers
             return View(tProvincium);
         }
 
-        // GET: TProvincias/Create
+        //Crear 
+
+        [Authorize(Roles = "Administrador")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: TProvincias/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        //Crear 
+
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProvinciaId,Provincia")] TProvincium tProvincium)
         {
-            if (ModelState.IsValid)
+            try
             {
                 _context.Add(tProvincium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            catch 
+            {
+                throw;
+            }
             return View(tProvincium);
         }
 
-        // GET: TProvincias/Edit/5
+        //Editar
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TProvincium == null)
@@ -82,9 +97,9 @@ namespace Proyecto_Final.Controllers
             return View(tProvincium);
         }
 
-        // POST: TProvincias/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //Editar
+
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ProvinciaId,Provincia")] TProvincium tProvincium)
@@ -93,9 +108,6 @@ namespace Proyecto_Final.Controllers
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
-            {
                 try
                 {
                     _context.Update(tProvincium);
@@ -111,13 +123,14 @@ namespace Proyecto_Final.Controllers
                     {
                         throw;
                     }
-                }
                 return RedirectToAction(nameof(Index));
             }
             return View(tProvincium);
         }
 
-        // GET: TProvincias/Delete/5
+        //Eliminar
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TProvincium == null)
@@ -135,7 +148,9 @@ namespace Proyecto_Final.Controllers
             return View(tProvincium);
         }
 
-        // POST: TProvincias/Delete/5
+        //Eliminar
+
+        [Authorize(Roles = "Administrador")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

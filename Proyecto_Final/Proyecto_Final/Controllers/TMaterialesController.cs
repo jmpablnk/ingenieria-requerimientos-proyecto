@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,8 @@ namespace Proyecto_Final.Controllers
             _context = context;
         }
 
+        // - MATERIALES
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Index()
         {
             var dB_RECOLECCION_RECICLAJEContext = _context.TMateriale.Include(t => t.NombreMaterial).Include(t => t.Peticion);
@@ -41,21 +44,30 @@ namespace Proyecto_Final.Controllers
 
             return View(tMateriale);
         }
+        [Authorize(Roles = "Administrador,Usuario")]
+
+        //Crear
+        //Index TNombre Materiales Redirige a esta zona -- TMATERIALES
         public IActionResult Create()
         {
-            ViewData["NombreMaterialId"] = new SelectList(_context.TNombreMaterial, "NombreMaterialId", "NombreMaterialId");
-            ViewData["PeticionId"] = new SelectList(_context.TProgramarRecoleccion, "PeticionId", "PeticionId");
+            ViewData["NombreMaterialId"] = new SelectList(_context.TNombreMaterial, "NombreMaterialId", "Nombre");
+            ViewData["PeticionId"] = new SelectList(_context.TProgramarRecoleccion, "PeticionId", "Municipio");
             return View();
         }
+
+        //Crear
+        //Index TNombre Materiales Redirige a esta zona -- TMATERIALES
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador,Usuario")]
         public async Task<IActionResult> Create([Bind("MaterialId,NombreMaterialId,Peso,PeticionId")] TMateriale tMateriale)
         {
             try
             {
                 _context.Add(tMateriale);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             catch 
             {
@@ -65,13 +77,14 @@ namespace Proyecto_Final.Controllers
             ViewData["PeticionId"] = new SelectList(_context.TProgramarRecoleccion, "PeticionId", "PeticionId", tMateriale.PeticionId);
             return View(tMateriale);
         }
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int? id)
+
         {
             if (id == null || _context.TMateriale == null)
             {
                 return NotFound();
             }
-
             var tMateriale = await _context.TMateriale.FindAsync(id);
             if (tMateriale == null)
             {
@@ -83,15 +96,13 @@ namespace Proyecto_Final.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int id, [Bind("MaterialId,NombreMaterialId,Peso,PeticionId")] TMateriale tMateriale)
         {
             if (id != tMateriale.MaterialId)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
-            {
                 try
                 {
                     _context.Update(tMateriale);
@@ -107,20 +118,19 @@ namespace Proyecto_Final.Controllers
                     {
                         throw;
                     }
-                }
                 return RedirectToAction(nameof(Index));
             }
             ViewData["NombreMaterialId"] = new SelectList(_context.TNombreMaterial, "NombreMaterialId", "NombreMaterialId", tMateriale.NombreMaterialId);
             ViewData["PeticionId"] = new SelectList(_context.TProgramarRecoleccion, "PeticionId", "PeticionId", tMateriale.PeticionId);
             return View(tMateriale);
         }
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TMateriale == null)
             {
                 return NotFound();
             }
-
             var tMateriale = await _context.TMateriale
                 .Include(t => t.NombreMaterial)
                 .Include(t => t.Peticion)
@@ -129,9 +139,9 @@ namespace Proyecto_Final.Controllers
             {
                 return NotFound();
             }
-
             return View(tMateriale);
         }
+        [Authorize(Roles = "Administrador")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -145,11 +155,9 @@ namespace Proyecto_Final.Controllers
             {
                 _context.TMateriale.Remove(tMateriale);
             }
-            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool TMaterialeExists(int id)
         {
           return (_context.TMateriale?.Any(e => e.MaterialId == id)).GetValueOrDefault();

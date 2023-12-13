@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,12 +18,20 @@ namespace Proyecto_Final.Controllers
         {
             _context = context;
         }
+        //Index TFechas
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Index()
         {
               return _context.TFecha != null ? 
                           View(await _context.TFecha.ToListAsync()) :
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.TFecha'  is null.");
         }
+
+        
+        //Detalles
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.TFecha == null)
@@ -39,10 +48,19 @@ namespace Proyecto_Final.Controllers
 
             return View(tFecha);
         }
+
+
+
+        //Crear 
+
+        [Authorize(Roles = "Administrador")]
         public IActionResult Create()
         {
             return View();
         }
+
+
+        //Crear 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FechaId,Fecha")] TFecha tFecha)
@@ -59,6 +77,9 @@ namespace Proyecto_Final.Controllers
             }
             return View(tFecha);
         }
+
+
+        //Editar 
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TFecha == null)
@@ -73,8 +94,12 @@ namespace Proyecto_Final.Controllers
             }
             return View(tFecha);
         }
+
+        //Editar
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int id, [Bind("FechaId,Fecha")] TFecha tFecha)
         {
             if (id != tFecha.FechaId)
@@ -103,6 +128,11 @@ namespace Proyecto_Final.Controllers
             }
             return View(tFecha);
         }
+
+
+        //Eliminar
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TFecha == null)
@@ -119,8 +149,12 @@ namespace Proyecto_Final.Controllers
 
             return View(tFecha);
         }
+
+        //Eliminar
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.TFecha == null)

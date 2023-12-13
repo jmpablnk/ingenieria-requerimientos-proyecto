@@ -73,6 +73,7 @@ namespace Proyecto_Final.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
+
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
@@ -100,6 +101,12 @@ namespace Proyecto_Final.Areas.Identity.Pages.Account
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    
+                    
+                    //Linea parar asignar el rol por defecto de "Usuario" a nuevos creados
+                    await _userManager.AddToRoleAsync(user, "Administrador");
+                    //Administrador
+                    //Usuario
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {

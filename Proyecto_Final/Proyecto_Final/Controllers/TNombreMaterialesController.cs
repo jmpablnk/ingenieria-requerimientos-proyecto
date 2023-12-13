@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,36 +18,50 @@ namespace Proyecto_Final.Controllers
         {
             _context = context;
         }
+
+        // Index de NombreMateriales // Solo Administradores
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Index()
         {
               return _context.TNombreMaterial != null ? 
                           View(await _context.TNombreMaterial.ToListAsync()) :
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.TNombreMaterial'  is null.");
         }
+        [Authorize(Roles = "Administrador")]
 
+
+
+        //Detalles
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.TNombreMaterial == null)
             {
                 return NotFound();
             }
-
             var tNombreMaterial = await _context.TNombreMaterial
                 .FirstOrDefaultAsync(m => m.NombreMaterialId == id);
             if (tNombreMaterial == null)
             {
                 return NotFound();
             }
-
             return View(tNombreMaterial);
         }
 
+
+
+        //Crear 
+        [Authorize(Roles = "Administrador")]
         public IActionResult Create()
         {
             return View();
         }
+
+        //Crear
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Create([Bind("NombreMaterialId,Nombre")] TNombreMaterial tNombreMaterial)
         {
             try
@@ -56,10 +71,16 @@ namespace Proyecto_Final.Controllers
                 return RedirectToAction(nameof(Index));
             }
             catch
-            { }
+            {
+                throw; 
+            }
             return View(tNombreMaterial);
         }
 
+
+        //Editar
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.TNombreMaterial == null)
@@ -74,8 +95,13 @@ namespace Proyecto_Final.Controllers
             }
             return View(tNombreMaterial);
         }
+
+
+        //Editar
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int id, [Bind("NombreMaterialId,Nombre")] TNombreMaterial tNombreMaterial)
         {
             if (id != tNombreMaterial.NombreMaterialId)
@@ -102,6 +128,11 @@ namespace Proyecto_Final.Controllers
             }
             return View(tNombreMaterial);
         }
+
+
+
+        //Eliminar
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TNombreMaterial == null)
@@ -118,6 +149,9 @@ namespace Proyecto_Final.Controllers
 
             return View(tNombreMaterial);
         }
+
+        //Eliminar 
+        [Authorize(Roles = "Administrador")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

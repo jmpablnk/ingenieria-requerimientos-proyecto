@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,16 +18,21 @@ namespace Proyecto_Final.Controllers
         {
             _context = context;
         }
+        
+        // Index THORAS
 
-        // GET: THoras
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Index()
         {
               return _context.THora != null ? 
                           View(await _context.THora.ToListAsync()) :
                           Problem("Entity set 'DB_RECOLECCION_RECICLAJEContext.THora'  is null.");
         }
-
-        // GET: THoras/Details/5
+        
+        
+        //Detalles
+        
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.THora == null)
@@ -44,17 +50,17 @@ namespace Proyecto_Final.Controllers
             return View(tHora);
         }
 
-        // GET: THoras/Create
+        //Crear 
+        [Authorize(Roles = "Administrador")]
         public IActionResult Create()
         {
             return View();
         }
+        //Crear 
 
-        // POST: THoras/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Create([Bind("HoraId,Hora")] THora tHora)
         {
             try
@@ -69,6 +75,10 @@ namespace Proyecto_Final.Controllers
             }
             return View(tHora);
         }
+
+
+        //Editar
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.THora == null)
@@ -83,16 +93,19 @@ namespace Proyecto_Final.Controllers
             }
             return View(tHora);
         }
+
+
+        //Editar
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Edit(int id, [Bind("HoraId,Hora")] THora tHora)
         {
             if (id != tHora.HoraId)
             {
                 return NotFound();
             }
-
-           
                 try
                 {
                     _context.Update(tHora);
@@ -114,7 +127,9 @@ namespace Proyecto_Final.Controllers
             return View(tHora);
         }
 
-        // GET: THoras/Delete/5
+        //Eliminar
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.THora == null)
@@ -132,9 +147,12 @@ namespace Proyecto_Final.Controllers
             return View(tHora);
         }
 
-        // POST: THoras/Delete/5
+
+        //Eliminar
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.THora == null)
